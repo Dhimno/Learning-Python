@@ -1,17 +1,18 @@
-from tkinter import *
-window = Tk()
-window.title("Login Page Simulator")
-window.geometry('500x500')
-window.tk.call('tk', 'scaling', 6.0)
 
-lbl = Label(window, text="What do you want to do?", font="arial")
-lbl.grid(column=50, row=0)
+#from tkinter import *
+#window = Tk()
+#window.title("Login Page Simulator")
+#window.geometry('500x500')
+#window.tk.call('tk', 'scaling', 6.0)
 
-option1 = Button(window, text="Add list")
-option1.grid(column=3, row=3)
+#lbl = Label(window, text="What do you want to do?", font="arial")
+#lbl.grid(column=30, row=0)
 
-option2 = Button(window, text="Remove list")
-option2.grid(column=3, row=6)
+#option1 = Button(window, text="Add list")
+#option1.grid(column=3, row=3)
+
+#option2 = Button(window, text="Remove list")
+#option2.grid(column=3, row=6)
 
 acc = ['Dhimas']
 Condition = True
