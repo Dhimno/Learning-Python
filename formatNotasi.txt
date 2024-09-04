@@ -1,0 +1,35 @@
+# Program     : (file name)
+# Deskripsi   : (short description)
+# NIM/Nama    : 24060123120008/Irvino Kent Setiawan
+# Tanggal     : (dd/mm/yyyy)
+# ===========================================================================
+# DEFINISI DAN SPESIFIKASI
+# ===========================================================================
+# (variable) = (input) -> (output)
+# (detailed description)
+# ===========================================================================
+# REALISASI
+# ===========================================================================
+
+*code here
+
+example:
+
+# Program     : nomor1.py
+# Deskripsi   : Menentukan volume prisma segitiga
+# NIM/Nama    : 24060123120008/Irvino Kent Setiawan
+# Tanggal     : 06/09/2023
+# ===========================================================================
+# DEFINISI DAN SPESIFIKASI
+# ===========================================================================
+# vol = 3 real -> real
+# vol(x,y,z) menentukan volume prisma segitiga dengan masukan
+# panjang alas(x), tinggi alas(y), dan tinggi prisma(z).
+# ===========================================================================
+# REALISASI
+# ===========================================================================
+
+def vol(x,y,z):
+    return((x*y/2)*z)
+print(vol(3,4,10))
+print(vol(15,20,30))

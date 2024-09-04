@@ -31,3 +31,4 @@ def total_detik(x,y,z):
 total_detik(25, 0, 0)
 total_detik(25, 0, 0)
 total_detik(24, 90, 0)
+
