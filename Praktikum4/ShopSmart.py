@@ -1,3 +1,8 @@
+# Program     : ShopSmart.py
+# Deskripsi   : Menentukan harga akhir yang akan didapat setelah menghitung pajak dan diskon yang berlaku
+# NIM/Nama    : 24060124120010
+# Tanggal     : (26/09/2024)
+
 def hargaAkhir(harga, kategori, VIP, lokasi, hari):
     if kategori == "elektronik":
         if VIP == True:
@@ -122,3 +127,7 @@ def hargaAkhir(harga, kategori, VIP, lokasi, hari):
                     return harga * 110/100
                 elif lokasi == "luar negeri":
                     return harga * 120/100
+                
+print(hargaAkhir(1000000, "elektronik", True, "dalam negeri", "Senin"))
+print(hargaAkhir(500000, "pakaian", False, "luar negeri", "Rabu"))
+print(hargaAkhir(250000, "makanan", True, "dalam negeri", "Senin"))

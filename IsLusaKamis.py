@@ -63,3 +63,19 @@ print(IsLusaKamis(10,8,2000))
 # 29 Februari = Kamis
 # 28 Feruari = senin
 
+
+def hour(x):
+    return x
+def minutes(x):
+    return x
+def seconds(x):
+    return x
+
+def jam(j,m,s):
+    if hour(j) <= 24 and hour(j) >=0:
+        if minutes(m) <= 59 and minutes(m) >= 0:
+            if seconds(s) <= 59 and seconds(s) >= 0:
+                return "Jam:", str(hour(j)) + ", Menit:", str(minutes(m)) + ", Detik:", str(seconds(s))
+    return "Waktu tidak valid"
+
+print(eval(input()))
