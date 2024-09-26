@@ -9,4 +9,6 @@ def f(x):
 def gradien(a,b):
     return ((f(a)-f(b))/(a-b))
 
-print(eval(input()))
+print(gradien(4,5))
+print(gradien(5,6))
+print(gradien(7,8))
