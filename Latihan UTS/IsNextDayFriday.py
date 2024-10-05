@@ -80,9 +80,9 @@ def IsNextDayFriday(h,b,t):
             return False
     
 # Aplikasi
-# IsNextDayFriday?(4, 1, 2020) --> True
-# IsNextDayFriday?(29, 2, 2020) --> True
-# IsNextDayFriday?(7, 3, 2020) --> True
+# IsNextDayFriday?(4, 1, 2020) --> _true_
+# IsNextDayFriday?(29, 2, 2020) --> _true_
+# IsNextDayFriday?(7, 3, 2020) --> _true_
 
 print(IsNextDayFriday(4, 1, 2020))
 print(IsNextDayFriday(29, 2, 2020))

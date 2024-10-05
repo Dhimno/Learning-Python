@@ -30,15 +30,17 @@ def BiayaAir(kode, x):
             return 40000
         else:
             return 40000 + (x-10) * 2500
-    if kode == 'A':
+    if kode == 'C':
         if x <= 10:
             return 50000
         else:
             return 50000 + (x-10) * 2500    
         
 print(BiayaAir('A',25))
+print(BiayaAir('B',25))
+print(BiayaAir('C',25))
 
 # Aplikasi
-# BiayaAir('A',25)
-# BiayaAir('B',25)
-# BiayaAir('C',25)
+# BiayaAir('A',25) --> 67500
+# BiayaAir('B',25) --> 77500
+# BiayaAir('C',25) --> 87500
