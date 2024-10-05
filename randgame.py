@@ -2,7 +2,7 @@ import random
 
 def maingame():
     x = random.randint(0,100)
-    print("============================================\nWelcome to a simple guess the number12 game!")
+    print("============================================\nWelcome to a simple guess the number game!")
     y = int(input("Please input your number here\n--> "))
     while y != x:
         if y > x:
