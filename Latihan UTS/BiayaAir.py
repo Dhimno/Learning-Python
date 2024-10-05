@@ -1,17 +1,23 @@
 # Total Biaya Air                               BiayaAir(kode, x)
-# DEFINISI DAN SPESIFIKASI
-# BiayaAir : character, real --> real
+# DEFINISI DAN SPESIFIkASI
+# BiayaAir : _character_['A', 'B', 'C'], _real_ > 0 --> _real_
 # {BiayaAir(kode, x) adalah sebuah fungsi untuk menghitung total biaya air dengan memperhitungkan berdasarkan kondisi dari input kode}
 
 # Realisasi
 # BiayaAir(kode, x) : 
-# depend on kode, x
-#       Kode = 'A' and x <= 10 : then 30000
-#       Kode = 'A' and x > 10 : then 30000 + (x-10) * 2500
-#       Kode = 'B' and x <= 10 : then 40000
-#       Kode = 'B' and x > 10 : then 40000 + (x-10) * 2500
-#       Kode = 'C' and x <= 10 : then 50000
-#       Kode = 'C' and x > 10 : then 50000 + (x-10) * 2500
+# _depend on_ kode, x
+#       kode = 'A' _and_ x <= 10 : _then_ 
+#           30000
+#       kode = 'A' _and_ x > 10 : _then_ 
+#           30000 + (x-10) * 2500
+#       kode = 'B' _and_ x <= 10 : _then_ 
+#           40000
+#       kode = 'B' _and_ x > 10 : _then_ 
+#           40000 + (x-10) * 2500
+#       kode = 'C' _and_ x <= 10 : _then_ 
+#           50000
+#       kode = 'C' _and_ x > 10 : _then_ 
+#           50000 + (x-10) * 2500
 
 def BiayaAir(kode, x):
     if kode == 'A':
@@ -31,3 +37,8 @@ def BiayaAir(kode, x):
             return 50000 + (x-10) * 2500    
         
 print(BiayaAir('A',25))
+
+# Aplikasi
+# BiayaAir('A',25)
+# BiayaAir('B',25)
+# BiayaAir('C',25)
