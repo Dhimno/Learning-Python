@@ -35,7 +35,7 @@ def min3(a,b,c):
     return min2(min2(a,b),c)
 
 def hitungRangeNilai(nilai):
-    return max3(nilai[0],nilai[1],nilai[2]) - min3(nilai[0],nilai[1],nilai[2])
+    return max3(getDaspro(nilai), getDasis(nilai), getMatematika(nilai)) - min3(getDaspro(nilai), getDasis(nilai), getMatematika(nilai))
 
 def nilaitertinggi(x):
     return max3(getDaspro(x), getDasis(x), getMatematika(x))
