@@ -78,15 +78,78 @@ def IsNextDayFriday(h,b,t):
             return True
         else:
             return False
-    
+        
+def IsNextMonthFriday(h,b,t):
+    if b > 2 and IsKabisat(t) == True:
+        if (dpm(b) + (h-1) + 1) % 7 == 4:
+            return True
+        else:
+            return False
+    else:
+        if (dpm(b) + (h-1)) % 7 == 4:
+            return True
+        else:
+            return False
+        
+def IsNextMonthFriday(h, b, t):
+    if b == 12: 
+        return IsNextMonthFriday2(h, 1, t+1)
+    else:
+        return IsNextMonthFriday2(h, b+1, t)
+
+        
+def IsNextMonthFriday2(h, b, t):
+    if b > 2 and IsKabisat(t) == True:
+        if (dpm(b) + (h-1) + 1) % 7 == 4:
+            return True
+        else:
+            return False
+    else:
+        if (dpm(b) + (h-1)) % 7 == 4:
+            return True
+        else:
+            return False
+        
+def IsNextYearFriday(h, b, t):
+    return IsNextYearFriday2(h,b,t+1)
+
+        
+def IsNextYearFriday2(h, b, t):
+    if b > 2 and IsKabisat(t) == True:
+        if (dpm(b) + (h-1) + 1) % 7 == 4:
+            return True
+        else:
+            return False
+    else:
+        if (dpm(b) + (h-1)) % 7 == 4:
+            return True
+        else:
+            return False
+        
 # Aplikasi
 # IsNextDayFriday?(4, 1, 2020) --> _true_
 # IsNextDayFriday?(29, 2, 2020) --> _true_
 # IsNextDayFriday?(7, 3, 2020) --> _true_
+# print(IsNextMonthFriday(1, 3, 2020)) --> false
+# print(IsNextMonthFriday(2, 3, 2020)) --> false
+# print(IsNextMonthFriday(3, 3, 2020)) --> false
+# print(IsNextMonthFriday(4, 3, 2020)) --> true
+# print(IsNextYearFriday(8, 3, 2020)) --> true
+# print(IsNextYearFriday(9, 3, 2020)) --> false
+# print(IsNextYearFriday(10, 3, 2020)) --> false
 
 print(IsNextDayFriday(4, 1, 2020))
 print(IsNextDayFriday(29, 2, 2020))
 print(IsNextDayFriday(7, 3, 2020))
+
+print(IsNextMonthFriday(1, 3, 2020))
+print(IsNextMonthFriday(2, 3, 2020))
+print(IsNextMonthFriday(3, 3, 2020))
+print(IsNextMonthFriday(4, 3, 2020))
+
+print(IsNextYearFriday(8, 3, 2020))
+print(IsNextYearFriday(9, 3, 2020))
+print(IsNextYearFriday(10, 3, 2020))
 
 
 
