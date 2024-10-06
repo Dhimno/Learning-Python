@@ -23,9 +23,9 @@
 # Min2: 2 _real_ --> _real_
 # Max3: 3 _real_ --> _real_
 # Min3: 3 _real_ --> _real_
-# hitungRangeNilai: NMatkul --> _real_
-# nilaitertinggi: NMatkul --> _real_
-# nilaiterendah: NMatkul --> _real_
+# hitungRangeNilai: MHS --> _real_
+# nilaitertinggi: MHS --> _real_
+# nilaiterendah: MHS --> _real_
 #
 # _REALISASI_
 # max2(a,b): (a + b + _abs_(a-b)) _div_ 2
@@ -67,6 +67,9 @@ def getDasis(x):
 def getMatematika(x):
     return x[2]
 
+def getMatkul(x):
+    return x[2]
+
 # Operator
 def max2(a,b):
     return (a + b + abs(a-b)) // 2
@@ -90,6 +93,6 @@ def nilaiterterendah(x):
     return min3(getDaspro(x), getDasis(x), getMatematika(x))
 
 # Aplikasi
-print(MakeHasil(getNama(MakeMHS('20010', "Dhimas", MakeNMatkul(100,99,98))),nilaitertinggi(MakeNMatkul(100,99,98)),nilaiterterendah(MakeNMatkul(100,99,98)),hitungRangeNilai(MakeNMatkul(100,99,98))))
-print(MakeHasil(getNama(MakeMHS('20069', "Rawr", MakeNMatkul(70,80,90))),nilaitertinggi(MakeNMatkul(70,80,90)),nilaiterterendah(MakeNMatkul(70,80,90)),hitungRangeNilai(MakeNMatkul(70,80,90))))
-print(MakeHasil(getNama(MakeMHS('20042', "Indominus", MakeNMatkul(75,80,85))),nilaitertinggi(MakeNMatkul(75,80,85)),nilaiterterendah(MakeNMatkul(75,80,85)),hitungRangeNilai(MakeNMatkul(75,80,85))))
+print(MakeHasil(getNama(MakeMHS('20042', "Indominus", MakeNMatkul(75,80,85))),nilaitertinggi(getMatkul(MakeMHS('20042', "Indominus", MakeNMatkul(75,80,85)))),nilaiterterendah(getMatkul(MakeMHS('20042', "Indominus", MakeNMatkul(75,80,85)))),hitungRangeNilai(getMatkul(MakeMHS('20042', "Indominus", MakeNMatkul(75,80,85))))))
+print(MakeHasil(getNama(MakeMHS('20069', "Rawr", MakeNMatkul(70,80,90))),nilaitertinggi(getMatkul(MakeMHS('20069', "Rawr", MakeNMatkul(70,80,90)))),nilaiterterendah(getMatkul(MakeMHS('20069', "Rawr", MakeNMatkul(70,80,90)))),hitungRangeNilai(getMatkul(MakeMHS('20069', "Rawr", MakeNMatkul(70,80,90))))))
+print(MakeHasil(getNama(MakeMHS('20010', "Dhimno", MakeNMatkul(100,99,98))),nilaitertinggi(getMatkul(MakeMHS('20010', "Dhimno", MakeNMatkul(100,99,98)))),nilaiterterendah(getMatkul(MakeMHS('20010', "Dhimno", MakeNMatkul(100,99,98)))),hitungRangeNilai(getMatkul(MakeMHS('20010', "Dhimno", MakeNMatkul(100,99,98))))))
