@@ -66,7 +66,7 @@ def getPenyebut(x):
     return x[1]
 
 def KonversiPecahan(P):
-    if getD(P) >= 0 and getBil(P) < 0 and getN(P) >= 0:
+    if getD(P) > 0 and getBil(P) < 0 and getN(P) >= 0:
         return makePecahanBiasa((getD(P) * getBil(P) + getN(P) * (-1)), getD(P))
     else:
         return makePecahanBiasa(getD(P) * getBil(P) + getN(P), getD(P))
