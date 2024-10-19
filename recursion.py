@@ -48,7 +48,6 @@ def faktorial(x):
         return 1
     else:
         return x*(faktorial(x-1))
-    
 # print(faktorial(6))
 # print(faktorial(7))
 
