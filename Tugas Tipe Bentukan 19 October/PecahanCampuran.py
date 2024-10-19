@@ -27,18 +27,29 @@
 #   {KonversiPecahan(P) adalah sebuah operator untuk mengkonversi tipe bentukan pecahan campuran menjadi pecahan biasa}
 # KonversiReal: PecahanCampuran -> real
 #   {KonversiReal(P) adalah sebuah operator untuk mengkonversi tipe bentukan pecahan campuran menjadi real}
-# AddP
+# AddP: 2 PecahanCampuran -> PecahanBiasa
+#   {AddP(P1,P2) adalah sebuah operator untuk menambahkan 2 PecahanCampuran dan mengoutputkan sebagai PecahanBiasa}
+# SubP: 2 PecahanCampuran -> PecahanBiasa
+#   {SubP(P1,P2) adalah sebuah operator untuk mengurangi 2 PecahanCampuran dan mengoutputkan sebagai PecahanBiasa}
+# DivP: 2 PecahanCampuran -> PecahanBiasa
+#   {DivP(P1,P2) adalah sebuah operator untuk membagi 2 PecahanCampuran dan mengoutputkan sebagai PecahanBiasa}
+# MulP: 2 PecahanCampuran -> PecahanBiasa
+#   {MulP(P1,P2) adalah sebuah operator untuk mengali 2 PecahanCampuran dan mengoutputkan sebagai PecahanBiasa}
+# IsEqP?: 2 PecahanCampuran -> boolean
+#   {IsEqP?(P1,P2) adalah sebuah predikat untuk mengoutput true jika kedua pecahan bernilai sama dan false jika sebaliknya}
+# IsLtP?: 2 PecahanCampuran -> boolean
+#   {IsLtP?(P1,P2) adalah sebuah predikat untuk mengoutput true jika pecahan pertama bernilai lebih kecil daripada pecahan kedua}
+# IsGtP?: 2 PecahanCampuran -> boolean
+#   {IsGtP?(P1,P2) adalah sebuah predikat untuk mengoutput true jika pecahan pertama bernilai lebih besar daripada pecahan kedua}
 # ===========================================================================
 # REALISASI
 # ===========================================================================
-
-# Konstruktor
 def makePecahanCampuran(bil, n, d):
     return [bil,n,d] 
 
 def makePecahanBiasa(n,d):
     return [n,d]
-# Selektor
+
 def getBil(x):
     return x[0]
 
@@ -54,16 +65,9 @@ def getPembilang(x):
 def getPenyebut(x):
     return x[1]
 
-# Operator
 def KonversiPecahan(P):
-    if getD(P) < 0 and getBil(P) < 0 and getN(P) < 0:
-        return makePecahanBiasa((getD(P) * getBil(P) + getN(P)) * (-1), getD(P) * (-1))
-    elif getD(P) < 0 and getBil(P) >= 0 and getN(P) >= 0:
-        return makePecahanBiasa((getD(P) * getBil(P) + getN(P)), getD(P) * (-1))
-    elif getD(P) >= 0 and getBil(P) < 0 and getN(P) >= 0:
+    if getD(P) >= 0 and getBil(P) < 0 and getN(P) >= 0:
         return makePecahanBiasa((getD(P) * getBil(P) + getN(P) * (-1)), getD(P))
-    elif getD(P) >= 0 and getBil(P) >= 0 and getN(P) < 0:
-        return makePecahanBiasa((getD(P) * getBil(P) + getN(P)) * (-1), getD(P))
     else:
         return makePecahanBiasa(getD(P) * getBil(P) + getN(P), getD(P))
 
@@ -82,7 +86,6 @@ def DivP(P1,P2):
 def MulP(P1,P2):
     return makePecahanBiasa(getPembilang(KonversiPecahan(P1)) * getPembilang(KonversiPecahan(P2)) , getPenyebut(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1)))
 
-# Predikat
 def IsEqP(P1,P2):
     return KonversiReal(P1) == KonversiReal(P2)
 
@@ -104,5 +107,3 @@ print(AddP(makePecahanCampuran(1,1,2), makePecahanCampuran(1,1,2)))
 print(KonversiReal(makePecahanCampuran(1,1,2)))
 print(KonversiPecahan(makePecahanCampuran(1,1,2)))
 print(KonversiPecahan(makePecahanCampuran(-1,1,2)))
-print(KonversiPecahan(makePecahanCampuran(1,-1,2)))
-print(KonversiPecahan(makePecahanCampuran(1,1,-2)))
