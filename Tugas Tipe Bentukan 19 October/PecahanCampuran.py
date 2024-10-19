@@ -9,20 +9,20 @@
 #   {<bil: integer, n:integer >= 0, d:integer > 0> adalah elemen dari pecahan campuran dimana bil adalah bilangan bulat disamping pecahan, n adalah pembilang dari pecahan, dan d adalah penyebut dari pecahan}
 # type PecahanBiasa: <n:integer >= 0, d:integer > 0>
 #   {<n:integer >= 0, d:integer > 0> adalah elemen dari pecahan biasa dimana n adalah sebuah pembilang dan d adalah penyebut}
-# makePecahanCampuran: <bil: integer, n:integer >= 0, d:integer > 0> -> PecahanCampuran
-#   {makePecahanCampuran(bil,n,d) adalah sebuah konstruktor untuk mengkonversi bil, n, d menjadi tipe bentukan pecahan campuran}
+# makePecahanC: <bil: integer, n:integer >= 0, d:integer > 0> -> PecahanCampuran
+#   {makePecahanC(bil,n,d) adalah sebuah konstruktor untuk mengkonversi bil, n, d menjadi tipe bentukan pecahan campuran}
 # makePecahanBiasa: <n:integer >= 0, d:integer > 0> -> PecahanBiasa
 #   {makePecahanBiasa(n,d) adalah sebuah konstruktor untuk mengkonversi n, d menjadi tipe bentukan pecahan biasa}
 # getBil: PecahanCampuran -> integer
 #   {getBil(x) adalah selektor untuk mengambil data bilangan dari tipe bentukan pecahan campuran}
 # getN: PecahanCampuran -> integer
-#   {getBil(x) adalah selektor untuk mengambil data pembilang dari tipe bentukan pecahan campuran}
+#   {getN(x) adalah selektor untuk mengambil data pembilang dari tipe bentukan pecahan campuran}
 # getD: PecahanCampuran -> integer
-#   {getBil(x) adalah selektor untuk mengambil data penyebut dari tipe bentukan pecahan campuran}
+#   {getD(x) adalah selektor untuk mengambil data penyebut dari tipe bentukan pecahan campuran}
 # getPembilang: PecahanBiasa -> integer
-#   {getBil(x) adalah selektor untuk mengambil data penyebut dari tipe bentukan pecahan biasa}
+#   {getPembilang(x) adalah selektor untuk mengambil data penyebut dari tipe bentukan pecahan biasa}
 # getPenyebut: PecahanBiasa -> integer
-#   {getBil(x) adalah selektor untuk mengambil data penyebut dari tipe bentukan pecahan biasa}
+#   {getPenyebut(x) adalah selektor untuk mengambil data penyebut dari tipe bentukan pecahan biasa}
 # KonversiPecahan: PecahanCampuran -> PecahanBiasa
 #   {KonversiPecahan(P) adalah sebuah operator untuk mengkonversi tipe bentukan pecahan campuran menjadi pecahan biasa}
 # KonversiReal: PecahanCampuran -> real
@@ -44,8 +44,8 @@
 # ===========================================================================
 # REALISASI
 # ===========================================================================
-def makePecahanCampuran(bil, n, d):
-    return [bil,n,d] 
+def makePecahanC(bil, n, d):
+    return [bil,n,d]
 
 def makePecahanBiasa(n,d):
     return [n,d]
@@ -97,13 +97,13 @@ def IsGtP(P1,P2):
 
 # ===========================================================================
 # APLIKASI
-print(IsEqP(makePecahanCampuran(1,1,2), makePecahanCampuran(1,1,2)))
-print(IsLtP(makePecahanCampuran(1,1,2), makePecahanCampuran(2,1,2)))
-print(IsGtP(makePecahanCampuran(2,1,2), makePecahanCampuran(1,1,2)))
-print(MulP(makePecahanCampuran(1,1,2), makePecahanCampuran(1,1,2)))
-print(DivP(makePecahanCampuran(1,1,2), makePecahanCampuran(1,1,2)))
-print(SubP(makePecahanCampuran(1,1,2), makePecahanCampuran(1,1,2)))
-print(AddP(makePecahanCampuran(1,1,2), makePecahanCampuran(1,1,2)))
-print(KonversiReal(makePecahanCampuran(1,1,2)))
-print(KonversiPecahan(makePecahanCampuran(1,1,2)))
-print(KonversiPecahan(makePecahanCampuran(-1,1,2)))
+print(IsEqP(makePecahanC(1,1,2), makePecahanC(1,1,2)))
+print(IsLtP(makePecahanC(1,1,2), makePecahanC(2,1,2)))
+print(IsGtP(makePecahanC(2,1,2), makePecahanC(1,1,2)))
+print(MulP(makePecahanC(1,1,2), makePecahanC(1,1,2)))
+print(DivP(makePecahanC(1,1,2), makePecahanC(1,1,2)))
+print(SubP(makePecahanC(1,1,2), makePecahanC(1,1,2)))
+print(AddP(makePecahanC(1,1,2), makePecahanC(1,1,2)))
+print(KonversiReal(makePecahanC(1,1,2)))
+print(KonversiPecahan(makePecahanC(1,1,2)))
+print(KonversiPecahan(makePecahanC(-1,1,2)))
