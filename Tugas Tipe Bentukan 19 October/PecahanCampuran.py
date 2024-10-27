@@ -5,41 +5,41 @@
 # ===========================================================================
 # DEFINISI DAN SPESIFIKASI
 # ===========================================================================
-# type PecahanCampuran : <bil: integer, n:integer >= 0, d:integer > 0>
+# type PecahanC : <bil: integer, n:integer >= 0, d:integer > 0>
 #   {<bil: integer, n:integer >= 0, d:integer > 0> adalah elemen dari pecahan campuran dimana bil adalah bilangan bulat disamping pecahan, n adalah pembilang dari pecahan, dan d adalah penyebut dari pecahan}
 # type PecahanBiasa: <n:integer >= 0, d:integer > 0>
 #   {<n:integer >= 0, d:integer > 0> adalah elemen dari pecahan biasa dimana n adalah sebuah pembilang dan d adalah penyebut}
-# makePecahanC: <bil: integer, n:integer >= 0, d:integer > 0> -> PecahanCampuran
+# makePecahanC: <bil: integer, n:integer >= 0, d:integer > 0> -> PecahanC
 #   {makePecahanC(bil,n,d) adalah sebuah konstruktor untuk mengkonversi bil, n, d menjadi tipe bentukan pecahan campuran}
 # makePecahanBiasa: <n:integer >= 0, d:integer > 0> -> PecahanBiasa
 #   {makePecahanBiasa(n,d) adalah sebuah konstruktor untuk mengkonversi n, d menjadi tipe bentukan pecahan biasa}
-# getBil: PecahanCampuran -> integer
+# getBil: PecahanC -> integer
 #   {getBil(x) adalah selektor untuk mengambil data bilangan dari tipe bentukan pecahan campuran}
-# getN: PecahanCampuran -> integer
+# getN: PecahanC -> integer
 #   {getN(x) adalah selektor untuk mengambil data pembilang dari tipe bentukan pecahan campuran}
-# getD: PecahanCampuran -> integer
+# getD: PecahanC -> integer
 #   {getD(x) adalah selektor untuk mengambil data penyebut dari tipe bentukan pecahan campuran}
 # getPembilang: PecahanBiasa -> integer
 #   {getPembilang(x) adalah selektor untuk mengambil data penyebut dari tipe bentukan pecahan biasa}
 # getPenyebut: PecahanBiasa -> integer
 #   {getPenyebut(x) adalah selektor untuk mengambil data penyebut dari tipe bentukan pecahan biasa}
-# KonversiPecahan: PecahanCampuran -> PecahanBiasa
+# KonversiPecahan: PecahanC -> PecahanBiasa
 #   {KonversiPecahan(P) adalah sebuah operator untuk mengkonversi tipe bentukan pecahan campuran menjadi pecahan biasa}
-# KonversiReal: PecahanCampuran -> real
+# KonversiReal: PecahanC -> real
 #   {KonversiReal(P) adalah sebuah operator untuk mengkonversi tipe bentukan pecahan campuran menjadi real}
-# AddP: 2 PecahanCampuran -> PecahanBiasa
+# AddP: 2 PecahanC -> PecahanC
 #   {AddP(P1,P2) adalah sebuah operator untuk menambahkan 2 PecahanCampuran dan mengoutputkan sebagai PecahanBiasa}
-# SubP: 2 PecahanCampuran -> PecahanBiasa
+# SubP: 2 PecahanC -> PecahanC
 #   {SubP(P1,P2) adalah sebuah operator untuk mengurangi 2 PecahanCampuran dan mengoutputkan sebagai PecahanBiasa}
-# DivP: 2 PecahanCampuran -> PecahanBiasa
+# DivP: 2 PecahanC -> PecahanC
 #   {DivP(P1,P2) adalah sebuah operator untuk membagi 2 PecahanCampuran dan mengoutputkan sebagai PecahanBiasa}
-# MulP: 2 PecahanCampuran -> PecahanBiasa
+# MulP: 2 PecahanC -> PecahanC
 #   {MulP(P1,P2) adalah sebuah operator untuk mengali 2 PecahanCampuran dan mengoutputkan sebagai PecahanBiasa}
-# IsEqP?: 2 PecahanCampuran -> boolean
+# IsEqP?: 2 PecahanC -> boolean
 #   {IsEqP?(P1,P2) adalah sebuah predikat untuk mengoutput true jika kedua pecahan bernilai sama dan false jika sebaliknya}
-# IsLtP?: 2 PecahanCampuran -> boolean
+# IsLtP?: 2 PecahanC -> boolean
 #   {IsLtP?(P1,P2) adalah sebuah predikat untuk mengoutput true jika pecahan pertama bernilai lebih kecil daripada pecahan kedua}
-# IsGtP?: 2 PecahanCampuran -> boolean
+# IsGtP?: 2 PecahanC -> boolean
 #   {IsGtP?(P1,P2) adalah sebuah predikat untuk mengoutput true jika pecahan pertama bernilai lebih besar daripada pecahan kedua}
 # ===========================================================================
 # REALISASI
@@ -75,16 +75,16 @@ def KonversiReal(P):
     return getPembilang(KonversiPecahan(P)) / getPenyebut(KonversiPecahan(P))
 
 def AddP(P1,P2):
-    return makePecahanBiasa(getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)) + getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1)), getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)))
+    return makePecahanC((getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)) + getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))) // (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), (getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)) + getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))) % (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)))
 
 def SubP(P1,P2):
-    return makePecahanBiasa(getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)) - getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1)), getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)))
+    return makePecahanC((getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)) - getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))) // (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), (getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)) - getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))) % (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)))
 
-def DivP(P1,P2):
-    return makePecahanBiasa(getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)), getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1)))
+def DivP(P1, P2):
+    return makePecahanC((getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))) // (getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))), (getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))) % (getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))), getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1)))
 
-def MulP(P1,P2):
-    return makePecahanBiasa(getPembilang(KonversiPecahan(P1)) * getPembilang(KonversiPecahan(P2)) , getPenyebut(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1)))
+def MulP(P1, P2):
+    return makePecahanC((getPembilang(KonversiPecahan(P1)) * getPembilang(KonversiPecahan(P2))) // (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), (getPembilang(KonversiPecahan(P1)) * getPembilang(KonversiPecahan(P2))) % (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)))
 
 def IsEqP(P1,P2):
     return KonversiReal(P1) == KonversiReal(P2)
