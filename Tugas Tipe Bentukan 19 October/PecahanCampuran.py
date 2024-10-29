@@ -75,16 +75,27 @@ def KonversiReal(P):
     return getPembilang(KonversiPecahan(P)) / getPenyebut(KonversiPecahan(P))
 
 def AddP(P1,P2):
-    return makePecahanC((getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)) + getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))) // (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), (getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)) + getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))) % (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)))
+    return makePecahanC((getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)) 
+    + getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))) // (getPenyebut(KonversiPecahan(P1)) 
+    * getPenyebut(KonversiPecahan(P2))), (getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)) + getPembilang(KonversiPecahan(P2)) 
+    * getPenyebut(KonversiPecahan(P1))) % (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), getPenyebut(KonversiPecahan(P1)) 
+    * getPenyebut(KonversiPecahan(P2)))
 
 def SubP(P1,P2):
-    return makePecahanC((getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)) - getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))) // (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), (getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)) - getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))) % (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)))
+    return makePecahanC((getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)) - getPembilang(KonversiPecahan(P2)) 
+    * getPenyebut(KonversiPecahan(P1))) // (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), (getPembilang(KonversiPecahan(P1)) 
+    * getPenyebut(KonversiPecahan(P2)) - getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))) % (getPenyebut(KonversiPecahan(P1)) 
+    * getPenyebut(KonversiPecahan(P2))), getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)))
 
 def DivP(P1, P2):
-    return makePecahanC((getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))) // (getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))), (getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))) % (getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1))), getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1)))
+    return makePecahanC((getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))) // (getPembilang(KonversiPecahan(P2)) 
+    * getPenyebut(KonversiPecahan(P1))), (getPembilang(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))) % (getPembilang(KonversiPecahan(P2)) 
+    * getPenyebut(KonversiPecahan(P1))), getPembilang(KonversiPecahan(P2)) * getPenyebut(KonversiPecahan(P1)))
 
 def MulP(P1, P2):
-    return makePecahanC((getPembilang(KonversiPecahan(P1)) * getPembilang(KonversiPecahan(P2))) // (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), (getPembilang(KonversiPecahan(P1)) * getPembilang(KonversiPecahan(P2))) % (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)))
+    return makePecahanC((getPembilang(KonversiPecahan(P1)) * getPembilang(KonversiPecahan(P2))) // (getPenyebut(KonversiPecahan(P1)) 
+    * getPenyebut(KonversiPecahan(P2))), (getPembilang(KonversiPecahan(P1)) * getPembilang(KonversiPecahan(P2))) 
+    % (getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2))), getPenyebut(KonversiPecahan(P1)) * getPenyebut(KonversiPecahan(P2)))
 
 def IsEqP(P1,P2):
     return KonversiReal(P1) == KonversiReal(P2)
