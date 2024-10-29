@@ -1,12 +1,14 @@
 # Program     : PecahanCampuran.py
-# Deskripsi   : Membuat pecahan campuran menggunakan tipe bentukan dan mengoperasikannya dengan operator yang ditentukan serta pengecekkan melalui predikat yang telah ditentukan
+# Deskripsi   : Membuat pecahan campuran menggunakan tipe bentukan dan mengoperasikannya dengan operator yang ditentukan 
+#               serta pengecekkan melalui predikat yang telah ditentukan
 # NIM/Nama    : 24060124120010/Dhimas Reza Nafi Wahyudi
 # Tanggal     : (28/10/2024)
 # ===========================================================================
 # DEFINISI DAN SPESIFIKASI
 # ===========================================================================
 # type PecahanC : <bil: integer, n:integer >= 0, d:integer > 0>
-#   {<bil: integer, n:integer >= 0, d:integer > 0> adalah elemen dari pecahan campuran dimana bil adalah bilangan bulat disamping pecahan, n adalah pembilang dari pecahan, dan d adalah penyebut dari pecahan}
+#   {<bil: integer, n:integer >= 0, d:integer > 0> adalah elemen dari pecahan campuran dimana bil adalah bilangan bulat disamping pecahan, 
+#    n adalah pembilang dari pecahan, dan d adalah penyebut dari pecahan}
 # type PecahanBiasa: <n:integer >= 0, d:integer > 0>
 #   {<n:integer >= 0, d:integer > 0> adalah elemen dari pecahan biasa dimana n adalah sebuah pembilang dan d adalah penyebut}
 # makePecahanC: <bil: integer, n:integer >= 0, d:integer > 0> -> PecahanC
