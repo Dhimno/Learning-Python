@@ -1,7 +1,7 @@
 # Program     : PecahanCampuran.py
 # Deskripsi   : Membuat pecahan campuran menggunakan tipe bentukan dan mengoperasikannya dengan operator yang ditentukan serta pengecekkan melalui predikat yang telah ditentukan
 # NIM/Nama    : 24060124120010/Dhimas Reza Nafi Wahyudi
-# Tanggal     : (19/10/2024)
+# Tanggal     : (28/10/2024)
 # ===========================================================================
 # DEFINISI DAN SPESIFIKASI
 # ===========================================================================
@@ -67,7 +67,7 @@ def getPenyebut(x):
 
 def KonversiPecahan(P):
     if getD(P) > 0 and getBil(P) < 0 and getN(P) >= 0:
-        return makePecahanBiasa((getD(P) * getBil(P) + getN(P) * (-1)), getD(P))
+        return makePecahanBiasa(-1*(getD(P) * (getBil(P) * -1) + getN(P)), getD(P))
     else:
         return makePecahanBiasa(getD(P) * getBil(P) + getN(P), getD(P))
 
