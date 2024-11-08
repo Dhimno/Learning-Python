@@ -23,7 +23,7 @@ def SetMhs(B, L): # Membuat set Mahasiswa dimana terdiri dari gabungan mahasiswa
     elif getNIM(B) == getNIM(FirstMhs(L)):
         return "Duplicate NIM " + "returning " + str(L)
     else:
-        return Konso(FirstMhs(L), SetMhs(B, Tail(L)))
+        return Konso(SetMhs(B, Tail(L)),FirstMhs(L))
 
 # Contoh Aplikasi SetMhs
 print(

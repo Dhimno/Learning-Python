@@ -4,10 +4,6 @@ def logaritma(L):
     else:
         return [2**L] + logaritma(L-1)
     
-
-
-
-
 def konso(e,L):
     return [e] + L
 
