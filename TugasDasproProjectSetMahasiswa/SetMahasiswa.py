@@ -27,21 +27,21 @@ def getFirstMhs(set): # Selektor untuk mengambil list mahasiswa pertama dari set
 def getLastMhs(set): # Selektor untuk mengambil list mahasiswa terakhir dari set mahasiswa
     return set[-1]
 
-def MakeSetMhs(B, L): # Membuat set Mahasiswa dimana terdiri dari gabungan mahasiswa dengan NIM yang unik
+def MakeSpecialSetMhs(B, L): # Membuat set Mahasiswa dimana terdiri dari gabungan mahasiswa dengan NIM yang unik
     if IsEmpty(L):
         return Konso(B, L)
     elif getNIM(B) == getNIM(getFirstMhs(L)):
-        return "Duplicate NIM " + "returning " + str(L)
+        return "Duplicate NIM detected"
     else:
-        return Konso(MakeSetMhs(B, Tail(L)),getFirstMhs(L))
+        return Konso(MakeSpecialSetMhs(B, Tail(L)),getFirstMhs(L))
 
 # Contoh Aplikasi SetMhs
 print(
-    MakeSetMhs(
-        MakeMhs(24060124120011, "Rawr", "F", makeNilai([90, 100, 80])),
+    MakeSpecialSetMhs(
+        MakeMhs(24060124120011, "Jack", "F", makeNilai([90, 100, 80])),
         [
-            MakeMhs(24060124120014, "Mooo", "F", makeNilai([90, 100, 80])),
-            MakeMhs(24060124120015, "Quack", "F", makeNilai([90, 100, 80])),
+            MakeMhs(24060124120014, "Kala", "F", makeNilai([90, 100, 80])),
+            MakeMhs(24060124120015, "Huna", "F", makeNilai([90, 100, 80])),
         ],
     )
 )
