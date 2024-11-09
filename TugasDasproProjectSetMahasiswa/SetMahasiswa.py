@@ -9,21 +9,31 @@ def MakeMhs(nim, nama, kelas, nilai): # Untuk membuat tipe bentukan mahasiswa
     return [nim, nama, kelas, nilai]
 
 
-def getNIM(Mhs): # Selektor untuk mengambik NIM dari mahasiswa
-    return Mhs[0]
+def getNIM(L): # Selektor untuk mengambik NIM dari mahasiswa
+    return L[0]
 
+def getNama(L):
+    return L[1]
 
-def FirstMhs(sMhs): # Selektor untuk mengambil list mahasiswa pertama dari set mahasiswa
+def getKelas(L):
+    return L[2]
+
+def getNilai(L):
+    return L[3]
+
+def getFirstMhs(sMhs): # Selektor untuk mengambil list mahasiswa pertama dari set mahasiswa
     return sMhs[0]
+# getFirstMhs: setMhs → Mhs
+#                 { getFirstMhs(setMhs) sebuah selektor untuk mengambil mahasiswa dari set mahasiswa}
 
 
 def SetMhs(B, L): # Membuat set Mahasiswa dimana terdiri dari gabungan mahasiswa dengan NIM yang unik
     if IsEmpty(L):
         return Konso(B, L)
-    elif getNIM(B) == getNIM(FirstMhs(L)):
+    elif getNIM(B) == getNIM(getFirstMhs(L)):
         return "Duplicate NIM " + "returning " + str(L)
     else:
-        return Konso(SetMhs(B, Tail(L)),FirstMhs(L))
+        return Konso(SetMhs(B, Tail(L)),getFirstMhs(L))
 
 # Contoh Aplikasi SetMhs
 print(

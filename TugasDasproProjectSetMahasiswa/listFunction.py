@@ -4,14 +4,14 @@
 # Tanggal   : 30/10/2024
 
 #REALISASI SELEKTOR AGAR FUNGSI BISA BERJALAN
-# Head: List tidak kosong -> List
+# Head: List -> List
 def Head(L):
     if IsEmpty(L):
         return None
     else: 
         return L[:-1]
 
-# Tail: List tidak kosong -> boolean
+# Tail: List -> boolean
 def Tail(L):
     if IsEmpty(L):
         return None
