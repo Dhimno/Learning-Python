@@ -53,7 +53,9 @@ def HeadList(S):
         return None
     else:
         return S[:-1]
-    
+
+# IsMemberS: elemen, list of list-> boolean
+# IsMemberS(x,S) mengembalikan true jika elemen x ada di dalam list of list S
 def IsMemberS(x,S):
     if IsEmpty(S):
         return False
@@ -69,8 +71,22 @@ def IsMemberS(x,S):
             return IsMemberS(x, TailList(S))
 print('\nIni adalah IsMemberS', IsMemberS(9,[4,5,6,[8,9,10],[12,0],8]),'\n')
 
-# Kurang Rember
+# Rember: elemen, list of list > list of list
+# Rember(x,S) menghapus semua elemen x yang ada di list of list S
+def Rember(x,S):
+    if IsEmpty(S):
+        return []
+    elif IsList(FirstList(S)):
+        return Konso(Rember1(x,FirstList(S)),Rember(x,TailList(S)))
+    else:
+        if FirstElmt(S) == x:
+            return Rember(x,TailList(S))
+        else:
+            return Konso(FirstElmt(S),Rember(x,TailList(S)))
+print('Ini adalah Rember', Rember(9,[4,5,6,9,[8,9,10],[12,0],8]),'\n')
 
+# Max: list of list > elemen
+# Max(S) mengembalikan elemen maksimum di dalam list of list S
 def Max(S):
     if IsEmpty(S):
         return 0
@@ -81,7 +97,8 @@ def Max(S):
             return max2(FirstList(S),Max(TailList(S)))
 print('Ini adalah fungsi Max', Max([4,5,6,[8,9,10],[12,0],8]),'\n')
 
-
+# NBElmtAtom: list of list -> integer
+# NBElmtAtom (S) mengembalikan banyaknya elemen list of list S yang berupa atom
 def NBElmtAtom(S):
     if IsEmpty(S):
         return 0
@@ -91,6 +108,8 @@ def NBElmtAtom(S):
         return 1 + NBElmtAtom(TailList(S))
 print('Ini adalah NB Element', NBElmtAtom([4,5,6,[8,9,10],[12,0],8]),'\n')
 
+# NBElmtList: list of list -> integer 
+# NBElmtList(S) mengembalikan banyaknya elemen list of list S yang berupa list
 def NBElmtList(S):
     if IsEmpty(S):
         return 0
@@ -100,6 +119,8 @@ def NBElmtList(S):
         return 1 + NBElmtList(TailList(S))
 print('Ini adalah NB List', NBElmtList([4,5,6,[8,9,10],[12,0],8]),'\n')
 
+# SumLoL: list of list -> integer
+# SumLoL(S) mengembalikan jumlah semua elemen dalam list of list S
 def SumLoL(S):
     if IsEmpty(S):
         return 0
@@ -110,6 +131,11 @@ def SumLoL(S):
     
 print('Ini adalah SumLOL', SumLoL([4,5,6,[2,3,1]]),'\n')
 
+
+
+
+# MaxNBElmtList: list of list --> integer
+# MaxNBElmtList(S) mengembalikan banyaknya elemen list maksimum yang ada pada list of list S
 def MaxNBElmtList(S):
     if IsEmpty(S):
         return 0
@@ -121,6 +147,8 @@ def MaxNBElmtList(S):
 print('Ini adalah MaxNBElmtList', MaxNBElmtList([4,5,6,[2,3,1]]),'\n')
 print('Ini adalah MaxNBElmtList', MaxNBElmtList([4,5,6,[2,3,1],[2,3,1,4]]),'\n')
 
+# MaxSumElmt: list of list -> integer
+# MaxSumElmt(S) mengembalikan elemen maksimum pada list of list S
 def MaxSumElmt(S):
     if IsEmpty(S):
         return 0
