@@ -225,12 +225,4 @@ def IsPalindrom(L):
 
 # print(IsPalindrom(['K', 'A', 'T', 'A', 'K']))
 
-def Rember1(x,L):
-    if IsEmpty(L):
-        return L
-    else:
-        if FirstElmt(L) == x:
-            return Tail(L)
-        else:
-            return Konso(FirstElmt(L),Rember1(x,Tail(L)))
 

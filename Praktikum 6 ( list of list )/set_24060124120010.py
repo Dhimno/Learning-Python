@@ -13,14 +13,14 @@ from listFunction import * # list bisa diganti dengan file yang berisi operasi-o
 # Jika x ada di list L, maka elemen L berkurang 1.
 # Jika x tidak ada di list L maka L tetap.
 # List kosong tetap menjadi list kosong.
-def Rember(x,L):
+def Rember1(x,L):
     if IsEmpty(L):
         return L
     else:
         if FirstElmt(L) == x:
             return Tail(L)
         else:
-            return Konso(FirstElmt(L),Rember(x,Tail(L)))
+            return Konso(FirstElmt(L),Rember1(x,Tail(L)))
 
 # MultiRember: elemen, list -> list
 # MultiRember(x, L) menghapus semua kemunculan elemen x dari list L.

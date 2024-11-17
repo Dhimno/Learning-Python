@@ -1,9 +1,21 @@
-# Program   : LOL.py
-# Deskripsi : Fungsi-fungsi untuk operasi list
+# Program   : LOL_24060124120010.py
+# Deskripsi : Fungsi-fungsi untuk operasi list of list
 # NIM/Nama  : 24060124120010/Dhimas Reza Nafi Wahyudi
-# Tanggal   : 30/10/2024
+# Tanggal   : 17/11/2024
 
 from listFunction import *
+from set_24060124120010 import Rember1
+
+# DEFINISI DAN SPESIFIKASI KONSTRUKTOR
+# KonsLo : list, list of list --> list of list
+# KonsLo(L,S) menambahkan list L sebagai elemen pertama dalam list of list S
+def KonsLo(L,S):
+    return [L] + S
+
+# KonsLi : list of list, list --> list of list
+# KonsLi(S,L) menambahkan list L sebagai elemen terakhir dalam list of list S
+def KonsLi(S,L):
+    return S + [L]
 
 # DEIFINISI DAN SPESIFIKASI TYPE PREDIKAT KHUSUS LIST
 # IsEmpty : list of list -> boolean
@@ -69,7 +81,6 @@ def IsMemberS(x,S):
             return True
         else:
             return IsMemberS(x, TailList(S))
-print('\nIni adalah IsMemberS', IsMemberS(9,[4,5,6,[8,9,10],[12,0],8]),'\n')
 
 # Rember: elemen, list of list > list of list
 # Rember(x,S) menghapus semua elemen x yang ada di list of list S
@@ -77,13 +88,12 @@ def Rember(x,S):
     if IsEmpty(S):
         return []
     elif IsList(FirstList(S)):
-        return Konso(Rember1(x,FirstList(S)),Rember(x,TailList(S)))
+        return KonsLo(Rember(x,FirstList(S)),Rember(x,TailList(S)))
     else:
         if FirstElmt(S) == x:
-            return Rember(x,TailList(S))
+            return Rember1(x,TailList(S))
         else:
-            return Konso(FirstElmt(S),Rember(x,TailList(S)))
-print('Ini adalah Rember', Rember(9,[4,5,6,9,[8,9,10],[12,0],8]),'\n')
+            return KonsLo(FirstElmt(S),Rember(x,TailList(S)))
 
 # Max: list of list > elemen
 # Max(S) mengembalikan elemen maksimum di dalam list of list S
@@ -95,7 +105,6 @@ def Max(S):
             return max2(max(FirstList(S)),Max(TailList(S)))
         else:
             return max2(FirstList(S),Max(TailList(S)))
-print('Ini adalah fungsi Max', Max([4,5,6,[8,9,10],[12,0],8]),'\n')
 
 # NBElmtAtom: list of list -> integer
 # NBElmtAtom (S) mengembalikan banyaknya elemen list of list S yang berupa atom
@@ -106,7 +115,6 @@ def NBElmtAtom(S):
         return NBElmtAtom(TailList(S))
     else:
         return 1 + NBElmtAtom(TailList(S))
-print('Ini adalah NB Element', NBElmtAtom([4,5,6,[8,9,10],[12,0],8]),'\n')
 
 # NBElmtList: list of list -> integer 
 # NBElmtList(S) mengembalikan banyaknya elemen list of list S yang berupa list
@@ -117,7 +125,6 @@ def NBElmtList(S):
         return NBElmtList(TailList(S))
     else:
         return 1 + NBElmtList(TailList(S))
-print('Ini adalah NB List', NBElmtList([4,5,6,[8,9,10],[12,0],8]),'\n')
 
 # SumLoL: list of list -> integer
 # SumLoL(S) mengembalikan jumlah semua elemen dalam list of list S
@@ -129,11 +136,6 @@ def SumLoL(S):
     else:
         return FirstList(S) + SumLoL(TailList(S))
     
-print('Ini adalah SumLOL', SumLoL([4,5,6,[2,3,1]]),'\n')
-
-
-
-
 # MaxNBElmtList: list of list --> integer
 # MaxNBElmtList(S) mengembalikan banyaknya elemen list maksimum yang ada pada list of list S
 def MaxNBElmtList(S):
@@ -144,9 +146,6 @@ def MaxNBElmtList(S):
     else:
         return MaxNBElmtList(TailList(S))
     
-print('Ini adalah MaxNBElmtList', MaxNBElmtList([4,5,6,[2,3,1]]),'\n')
-print('Ini adalah MaxNBElmtList', MaxNBElmtList([4,5,6,[2,3,1],[2,3,1,4]]),'\n')
-
 # MaxSumElmt: list of list -> integer
 # MaxSumElmt(S) mengembalikan elemen maksimum pada list of list S
 def MaxSumElmt(S):
@@ -158,6 +157,31 @@ def MaxSumElmt(S):
         else:
             return max2(FirstList(S),MaxSumElmt(TailList(S)))
         
-print('Ini adalah MaxSumElmt', MaxSumElmt([4,5,9,[2,3,1],[2,3,1,4]]),'\n')
-
-
+# ========================================================================================
+# APLIKASI TEST
+# ========================================================================================
+print("\nIni adalah hasil dari fungsi KonsLo", KonsLo([1, 2, 3], [4, 5, 6]), "\n")  # [[1, 2, 3], 4, 5, 6]
+print("Ini adalah hasil dari fungsi KonsLi", KonsLi([1, 2, 3], [4, 5, 6]), "\n")  # [1, 2, 3, [4, 5, 6]]
+print("Ini adalah hasil dari fungsi FirstList", FirstList([[1, 2, 3], 4, 5, 6]), "\n")  # [1, 2, 3]
+print("Ini adalah hasil dari fungsi LastList", LastList([[1, 2, 3], 4, 5, 6]), "\n")  # 6
+print("Ini adalah hasil dari fungsi TailList", TailList([[1, 2, 3], 4, 5, 6]), "\n")  # [4, 5, 6]
+print("Ini adalah hasil dari fungsi HeadList", HeadList([[1, 2, 3], 4, 5, 6]), "\n")  # [[1, 2, 3], 4, 5]
+print("Ini adalah hasil dari fungsi IsEmpty", IsEmpty([]), "\n")  # True
+print("Ini adalah hasil dari fungsi IsEmpty", IsEmpty([[]]), "\n")  # False
+print("Ini adalah hasil dari fungsi IsAtom", IsAtom(1), "\n")  # True
+print("Ini adalah hasil dari fungsi IsAtom", IsAtom([1, 2, 3]), "\n")  # False
+print("Ini adalah hasil dari fungsi IsList", IsList([1, 2, 3]), "\n")  # True
+print("Ini adalah hasil dari fungsi IsList", IsList(1), "\n")  # False
+print("================================================")
+# ========================================================================================
+# APLIKASI TUGAS
+# ========================================================================================
+print('\nIni adalah hasil dari IsMemberS', IsMemberS(9,[4,5,6,[8,9,10],[12,0],8]),'\n') # True
+print('Ini adalah hasil dari Rember', Rember(9,[4,5,6,9,[8,9,10],[12,0],8]),'\n') # [4, 5, 6, [8, 9, 10], [12, 0], 8]
+print('Ini adalah hasil dari fungsi Max', Max([4,5,6,[8,9,10],[12,0],8]),'\n') # 12
+print('Ini adalah hasil dari NB Element', NBElmtAtom([4,5,6,[8,9,10],[12,0],8]),'\n') # 4
+print('Ini adalah hasil dari NB List', NBElmtList([4,5,6,[8,9,10],[12,0],8]),'\n') # 2
+print('Ini adalah hasil dari SumLOL', SumLoL([4,5,6,[2,3,1]]),'\n') # 21
+print('Ini adalah hasil dari MaxNBElmtList', MaxNBElmtList([4,5,6,[2,3,1]]),'\n') # 3
+print('Ini adalah hasil dari MaxNBElmtList', MaxNBElmtList([4,5,6,[2,3,1],[2,3,1,4]]),'\n') # 4
+print('Ini adalah hasil dari MaxSumElmt', MaxSumElmt([4,5,9,[2,3,1],[2,3,1,4]]),'\n') # 10
