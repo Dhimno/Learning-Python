@@ -183,4 +183,4 @@ print('Ini adalah hasil dari NB List', NBElmtList([4,5,6,[8,9,10],[12,0],8]),'\n
 print('Ini adalah hasil dari SumLOL', SumLoL([4,5,6,[2,3,1]]),'\n') # 21
 print('Ini adalah hasil dari MaxNBElmtList', MaxNBElmtList([4,5,6,[2,3,1]]),'\n') # 3
 print('Ini adalah hasil dari MaxNBElmtList', MaxNBElmtList([4,5,6,[2,3,1],[2,3,1,4]]),'\n') # 4
-print('Ini adalah hasil dari MaxSumElmt', MaxSumElmt([4,5,9,[2,3,1],[2,3,1,4]]),'\n') # 10
+print('Ini adalah hasil dari MaxSumElmt', MaxSumElmt([4,5,9,[2,3,1],[2,3,1,4]]),'\n') # 1
