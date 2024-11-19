@@ -4,7 +4,6 @@
 # Tanggal   : 17/11/2024
 
 from listFunction import *
-from set_24060124120010 import Rember1
 
 # DEFINISI DAN SPESIFIKASI KONSTRUKTOR
 # KonsLo : list, list of list --> list of list
