@@ -87,11 +87,11 @@ def IsMemberS(x,S):
 def Rember(x,S):
     if IsEmpty(S):
         return []
-    elif IsList(FirstList(S)):
+    elif IsList(FirstElmt(S)):
         return KonsLo(Rember(x,FirstList(S)),Rember(x,TailList(S)))
     else:
         if FirstElmt(S) == x:
-            return Rember1(x,TailList(S))
+            return Rember(x,TailList(S))
         else:
             return KonsLo(FirstElmt(S),Rember(x,TailList(S)))
 
