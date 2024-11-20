@@ -1,0 +1,30 @@
+# def right(p):
+#     return p[2]
+# def NBElmtTree(p):
+#     if IsTreeEmpty(p):
+#         return 0
+#     else:
+#         return NbElmt(anak(p))+1+NbElmt(right(p))
+# def search(x, T):
+#     if IsTreeEmpty(T):
+#         return False
+#     else:
+#         if akar(T) == x:
+#             return True
+#         else:
+#             return search(x,anak(T)) or search(x,right(T))
+        
+# print(search('F',Tree))
+
+# def search1(x,T):
+#     if IsTreeEmpty(T):
+#         return False
+#     else:
+#         if IsOneElmt(T):
+#             return akar(T) == x
+#         else:
+#             return search1()
+
+
+
+#['C',['D',[]],['E',[]]]
