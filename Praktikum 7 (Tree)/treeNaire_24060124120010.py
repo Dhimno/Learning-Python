@@ -33,7 +33,7 @@ def anak(p):
 
 
 #DEFINISI DAN SPESIFIKASI PREDIKAT
-def isTreeNEmpty (PN):
+def isTreeNEmpty(PN):
     return PN == []
 
 
